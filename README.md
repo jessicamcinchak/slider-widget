@@ -2,7 +2,7 @@
 
 A JavaScript module that renders [jQuery UI's slider widget](https://jqueryui.com/slider/) and attaches [Backbone's events module](http://backbonejs.org/#Events). Backbone decouples our event system and handles event start-up and tear down, making for neat integration into our single page app.
 
-# Usage
+## Usage
 
 Set options and invoke the module.
 
