@@ -1,4 +1,4 @@
-var TimeSlider = function() {
+var Slider = function() {
 
     var self = {},
         data = [2010, 2011, 2012, 2013, 2014];
@@ -16,7 +16,7 @@ var TimeSlider = function() {
 
     /** Draw slider based on data */
     self.create = function() {
-        /** Only draw if there is more than one year of data */
+        /** Only draw if there is more than one unit of data */
         if( (d3.min(data)) !== (d3.max(data)) ) {
 
             var tooltip = $('<div id="tooltip"><div/>');
@@ -72,17 +72,17 @@ var TimeSlider = function() {
     return self;
 };
 
-var ts = TimeSlider(); //invoke function
+var slider = Slider(); //invoke function
 
-ts.create();
+slider.create();
 
 /** 
- * (Configure and call this event on the instance of ts, decoupling it from the TimeSlider function and maintaining module pattern)
+ * (Configure and call this event on the instance of slider, decoupling it from the Slider function and maintaining module pattern)
  * When active data value changes, change the div color
  * @param {string} rgb - current background color
  * @returns {string} rgb - spectrum color opposite of current color
  */
-ts.on('change', function(rgb) {
+slider.on('change', function(rgb) {
     $("#box").css('background-color', function() {
         var currentColor = $("#box").css('background-color'), //.css() method returns 'rgb(r, g, b)' format
             colorSpectrum = [ 'rgb(157, 51, 132)', 'rgb(109, 119, 192)' ];
@@ -94,6 +94,6 @@ ts.on('change', function(rgb) {
     })
 });
 
-// console.log(ts); //'ts.activeDataPoint()' logs current data value
-// ts.update();
-// ts.destroy();
+// console.log(slider); //'slider.activeDataPoint()' logs current data value
+// slider.update();
+// slider.destroy();
