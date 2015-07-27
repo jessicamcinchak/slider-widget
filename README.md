@@ -1,6 +1,6 @@
 # slider-widget
 
-slider-widget is a JavaScript module that uses jQuery UI's slider together with Backbone's event system to track active data points and trigger custom change events.
+slider-widget is a JavaScript module that uses [jQuery UI's slider](https://jqueryui.com/slider/) together with [Backbone's events module](http://backbonejs.org/#Events) to track an active data point and trigger a custom change event.
 
 # Usage
 
@@ -13,7 +13,7 @@ Invoke the module and draw the slider.
 	var slider = Slider();
 	slider.create();
 
-Define your custom change event through a callback function. Using Backbone, we bind our event to our module, listen for changes to the active data point, and trigger an event we define in the instance of slider.on(). This example changes the color of a div as the slider steps through multiple years.
+Define your custom change event through a callback function. Using Backbone, we bind our event to our object, listen for changes to the active data point, and then trigger the event we define in the instance of slider.on(). This example changes the color of a div as the slider steps through five years.
 
 	slider.on('change', function(rgb) {
 	    $("#box").css('background-color', function() {
