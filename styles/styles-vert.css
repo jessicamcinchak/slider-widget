@@ -1,0 +1,50 @@
+label, #year, #tooltip {
+	font-family: helvetica, sans-serif;
+	font-size: 13px;
+}
+
+/* Styles the vertical slider; alternately use jquery-ui class '.ui-slider-vertical' */
+#slider { 
+	margin: 20px; 
+	margin-left: 75px;
+	height: 300px;
+	width: 1px;
+	background: #323232;
+}
+
+#tooltip {
+	position: absolute;
+	z-index: 999;
+	left: -50px;
+	bottom: 20px;
+	top: 0;
+	width: 40px;
+	height: 18px;
+	padding: 2px;
+	background-color: #323232;
+	border-radius: 5px;
+	color: white;
+	text-align: center;
+	font-weight: lighter;
+}
+
+/* Styles the handle; not sure yet how it's different from '.ui-slider-handle' class?? */
+.ui-widget-content .ui-state-default {
+	background: #323232;
+	/*background-image: url("clock-icon.png");*/
+	border-color: white;
+	border-width: 2px;
+	border-radius: 30px;
+	left: -11.5px;
+}
+
+/** Remove the default blue outline on slider; alternatively use '.ui-state-focus:focus' */
+.ui-widget * {
+	outline: none;
+}
+
+div {
+	height: 100px;
+	width: 150px;
+	background-color: #9D3384;
+}
