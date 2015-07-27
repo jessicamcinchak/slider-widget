@@ -8,10 +8,13 @@ Set your data by defining an array within the Slider module. For example:
 
 	var data = [2010, 2011, 2012, 2013, 2014];
 
-Invoke the module, draw the slider, and define your custom change event through a callback function. Using Backbone, we bind our event to our module, listen for changes to the active data point, and trigger the change we set in the instance of slider.on(). This example changes the color of a div as the slider steps through multiple years.
+Invoke the module and draw the slider.
 
 	var slider = Slider();
 	slider.create();
+
+Define your custom change event through a callback function. Using Backbone, we bind our event to our module, listen for changes to the active data point, and trigger an event we define in the instance of slider.on(). This example changes the color of a div as the slider steps through multiple years.
+
 	slider.on('change', function(rgb) {
 	    $("#box").css('background-color', function() {
 	        var currentColor = $("#box").css('background-color'), //.css() method returns 'rgb(r, g, b)' format
