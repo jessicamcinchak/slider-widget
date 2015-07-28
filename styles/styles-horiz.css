@@ -5,8 +5,11 @@ label, #year, #tooltip {
 
 /* Styles the horizontal slider; alternately use jquery-ui class '.ui-slider-horizontal' */
 #slider { 
-	margin: 50px; 
-	margin-left: 30px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 50px;
+	margin-top: 70px; 
 	height: 3px;
 	width: 300px;
 	background: #B7B3AB;
@@ -15,25 +18,24 @@ label, #year, #tooltip {
 #tooltip {
 	position: absolute;
 	z-index: 999;
-	left: -45px;
+	left: -15px;
 	bottom: 0;
 	top: 0;
 	width: 40px;
 	height: 18px;
 	padding: 2px;
-	background-color: #FFFAEF;
-	border-color: #323232;
+	background-color: #323232;
 	border-radius: 5px;
-	color: black;
+	color: white;
 	text-align: center;
-	/*font-weight: lighter;*/
+	font-weight: lighter;
 }
 
-/* Styles the handle; not sure yet how it's different from '.ui-slider-handle' class?? */
+/* Styles the handle; alternatively use '.ui-slider-handle' */
 .ui-widget-content .ui-state-default {
 	background: #FFFAEF;
 	/*background-image: url("clock-icon.png");*/
-	border-color: #323232;
+	border-color: white;
 	border-width: 2px;
 	border-radius: 30px;
 	left: 0;
@@ -46,12 +48,11 @@ label, #year, #tooltip {
 }
 
 div {
-	margin-left: 30px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 	height: 100px;
 	width: 300px;
 	background-color: #9D3384;
-}
-
-body {
-	background-color: #323232;
+	border-radius: 10px;
 }
