@@ -1,24 +1,26 @@
+/** Set options and invoke the function */
 var slider = Slider({
-    orientation: 'adsgufadkgas',
-    tooltipId: "tooltip",
     id: "slider",
-    activeDataPoint: 2010,
-    min: 10,
-    max: 20,
-    step: 2,
+    tooltipId: "tooltip",
+    orientation: 'horizontal',
+    value: 2015, //handle start value, defaults to options.max
+    min: 2010,
+    max: 2020,
+    step: 1, //snap-to increments
     subdivisions: 5
-}); //invoke function
+});
 
+/** Draw the slider */
 slider.create();
 
 /** 
  * (Configure and call this event on the instance of slider, decoupling it from the Slider function and maintaining module pattern)
  * When active data value changes, change the div color
- * @param {string} rgb - current background color
+ * @param {value} newValue - active data point
  * @returns {string} rgb - spectrum color opposite of current color
  */
 slider.on('change', function(newValue) {
-    console.log(newValue);
+    // console.log(newValue);
     $("#box").css('background-color', function() {
         var currentColor = $("#box").css('background-color'), //.css() method returns 'rgb(r, g, b)' format
             colorSpectrum = [ 'rgb(157, 51, 132)', 'rgb(109, 119, 192)' ];
@@ -30,6 +32,13 @@ slider.on('change', function(newValue) {
     })
 });
 
-// console.log(slider); //'slider.activeDataPoint()' logs current data value
-// slider.update();
+/** Update slider after it's been rendered by setting new parameter and new value */
+slider.update({
+    updateParam: 'step', //value, min, max, or step only.
+    updateValue: 2
+});
+
+slider.update({ step: 4, min: 1990 });
+
+/** Destroy the slider and box div, unbind event listeners */
 // slider.destroy();
