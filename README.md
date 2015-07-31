@@ -4,14 +4,11 @@ A JavaScript module that renders [jQuery UI's slider widget](https://jqueryui.co
 
 ## Usage
 
-Set options and invoke the module.
+Set options, invoke the module, and draw the slider.
 
 	var slider = Slider({
 		// options list
 	});
-
-Draw the slider.
-
 	slider.create();
 
 Define your custom change event through a callback function. Using Backbone, we bind the event to our object, listen for changes to the active data point, and then trigger the event in the instance of slider.on().
@@ -20,4 +17,11 @@ Define your custom change event through a callback function. Using Backbone, we 
 		// your custom event
 	});
 
-Check out sample code here `examples/change-color.js`
+Update and tear down the slider without having to refresh your page.
+
+	slider.update({
+		// update paramater and new value
+	});
+	slider.destroy();
+
+Find a simple code example here `examples/change-color.js`
